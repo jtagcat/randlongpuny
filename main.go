@@ -32,10 +32,8 @@ func main() {
 
 				if full, err := idna.ToASCII(string(domain)); err != nil {
 					break
-				} else {
-					if len(full) > 63 {
-						break
-					}
+				} else if len(full) > 63 {
+					break
 				}
 			}
 
@@ -45,8 +43,7 @@ func main() {
 		},
 	}
 
-	err := app.Run(os.Args)
-	if err != nil {
+	if err := app.Run(os.Args); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
