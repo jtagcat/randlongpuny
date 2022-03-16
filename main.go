@@ -14,7 +14,7 @@ import (
 func main() {
 	app := &cli.App{
 		Name:        "randlongpuny",
-		Description: "Generates a long random punycode from charset",
+		Description: "Generates a long random punycode from charset. Likely inefficient. Increadably dumb.",
 		Usage:       "randlongpuny <charset>...",
 		Action: func(c *cli.Context) error {
 			args := c.Args()
