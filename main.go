@@ -18,8 +18,7 @@ func main() {
 		Usage:       "randlongpuny <charset>...",
 		Action: func(c *cli.Context) error {
 			args := c.Args()
-			x := args.Present()
-			if !x {
+			if !args.Present() {
 				return fmt.Errorf("no charset specified")
 			}
 			charset := []rune(strings.Join(args.Slice(), ""))
