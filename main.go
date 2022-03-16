@@ -24,7 +24,7 @@ func main() {
 			charset := []rune(strings.Join(args.Slice(), ""))
 
 			var domain []rune
-			r := rand.New(rand.NewSource(time.Now().UnixNano()))
+			r := rand.New(rand.NewSource(time.Now().UnixNano())) // multiple runs should give different results
 			for {
 				// rand char
 				r := r.Intn(len(charset))
